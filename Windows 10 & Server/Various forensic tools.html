@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<!-- saved from url=(0038)http://www.reconstructer.org/code.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+	
+	<title>www.reconstructer.org</title>
+	<link rel="stylesheet" href="./Various forensic tools_files/style.css" type="text/css" media="screen">
+<script language="JavaScript">
+<!--
+window.moveTo(0, 0)
+window.resizeTo(1024,768);
+//-->
+</script>
+	
+    <script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() {
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) {
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImgRestore() {
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() {
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body onload="MM_preloadImages(&#39;images/btn_about_h.gif&#39;,&#39;images/btn_code_h.gif&#39;,&#39;images/btn_papers_h.gif&#39;,&#39;images/btn_links_h.gif&#39;)">
+
+	<div id="con">
+		
+		<div id="head">
+			<a href="http://www.reconstructer.org/main.html"><img src="./Various forensic tools_files/head.gif" height="320" width="193" alt="back to home"></a>
+		</div>
+		
+		<div id="concont">
+		  <div id="nav">
+				<a href="http://www.reconstructer.org/main.html"><img src="./Various forensic tools_files/btn_spacer.gif" height="50" width="500" alt="back to home"></a><br>
+			  <span class="navbtn">				  <a href="http://www.reconstructer.org/about.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(&#39;about&#39;,&#39;&#39;,&#39;images/btn_about_h.gif&#39;,1)"><img src="./Various forensic tools_files/btn_about.gif" alt="About me and the project" name="about" width="99" height="19" border="0" id="about"></a><a href="http://www.reconstructer.org/code.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(&#39;code&#39;,&#39;&#39;,&#39;images/btn_code_h.gif&#39;,1)"><img src="./Various forensic tools_files/btn_code.gif" alt="Code i&#39;ve done" name="code" width="90" height="19" border="0" id="code"></a><a href="http://www.reconstructer.org/papers.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(&#39;papers&#39;,&#39;&#39;,&#39;images/btn_papers_h.gif&#39;,1)"><img src="./Various forensic tools_files/btn_papers.gif" alt="Papers i&#39;ve written" name="papers" width="112" height="19" border="0" id="papers"></a><a href="http://www.reconstructer.org/links.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(&#39;links&#39;,&#39;&#39;,&#39;images/btn_links_h.gif&#39;,1)"><img src="./Various forensic tools_files/btn_links.gif" alt="Links to other reversing sites" name="links" width="99" height="19" border="0" id="links"></a>
+			  </span>
+			</div>
+
+			<div id="context">
+				
+				<div id="text">
+                                        <p>16.01.2011</p>
+                                        <p>KernelCBFind-x86.wdbg is a small Windbg script i use while rootkit hunting and searching for kernel callbacks. See the readme.txt for usage infos.</p>
+                                        <p><a href="http://www.reconstructer.org/code/WindbgScript-KernelCBFindx86.rar" target="_blank">WindbgScript-KernelCBFindx86.rar</a></p>
+					<p>28.09.2009</p>
+					<p>OfficeMalScanner v0.5 is a Ms Office forensic tool to scan for malicious traces, like shellcode heuristics, PE-files or embedded OLE streams. Found files are being extracted to disk. It supports disassembly and hexview as well as an easy brute force mode to detect encrypted files. Next to this, an office file is being scanned for VB-macro code and if found, it will be extracted for further analysis. The "inflate" feature extracts Ms Office 2007 documents into a directory and marks potentially malicious files. Also included in this package is a tool called MalHost-Setup, some kind of MS Office runtime emulation environment to debug shellcode in malicious documents in realtime.</p>
+					<p><a href="http://www.reconstructer.org/code/OfficeMalScanner.zip" target="_blank">OfficeMalScanner.zip</a></p>
+					<p>16.07.2007</p>
+			  	<p>This small IDAPython script includes all vtable structures that can be found in the files of the Microsoft PSDK 2003-R2. After running the script in IDA it adds these vtable structures to an IDB file. This will save time while reconstructing COM code.</p>
+			  	<p><a href="http://www.reconstructer.org/code/VtablesStructuresFromPSDK2003R2.zip" target="_blank">VtablesStructuresFromPSDK2003R2.zip</a></p>					
+					<p>16.06.2007</p>
+			  	<p>This small IDAPython script scans an idb file for class and interfaces UUIDs and creates the matching structure and its name. Unfortunately IDA doesn't do this automatically, thus this little helper. It personally helped me alot, while reversing several malwares using the COM interface, e.g. for browser or outlook manipulation, BITS file transfer or dumping the protected storage. The script was tested with IDAPython v0.9.0 and Python 2.4. Make sure to copy interfaces.txt + classes.txt + ClassAndInterfaceToNames.py to IDADIR, e.g. C:\Program Files\IDA</p>
+			  	<p><a href="http://www.reconstructer.org/code/ClassAndInterfaceToNames.zip" target="_blank">ClassAndInterfaceToNames.zip</a></p>
+					<p>03.06.2007</p>
+			  	<p>MFC42Ord2FuncNames is a small IDAPython script which converts MFC42 functions into its realnames. Normally IDA Pro should do this automatically, but in some cases the IDA auto-analysis fails. Watch the short flash movie included in the package for details.</p>
+			  	<p><a href="http://www.reconstructer.org/code/MFC42Ord2FuncNames.zip" target="_blank">MFC42Ord2FuncNames.zip</a></p>
+			  	<p>13.05.2007</p>
+			  	<p>VMEDetect v0.1 is a small commandline tool written in assembly, which makes use of the RDTSC trick to check for the presence of VMWare and VirtualPC.</p>
+			  	<p><a href="http://www.reconstructer.org/code/VMEDetect%20v0.1.zip" target="_blank">VMEDetect v0.1.zip</a></p>
+				  <p>11.05.2007</p>
+				  <p>This is a little proof of concept code to test, if your application-firewall alerts when bitscode.exe tries to download and execute fwbypassalert.exe from this site.</p>
+				  <p><a href="http://www.reconstructer.org/code/_bitscode.zip" target="_blank">bitscode.zip</a></p>
+				  <p>Also check out Elia Florio's blog for more information on this problem.</p>
+				  <p><a href="http://www.symantec.com/enterprise/security_response/weblog/2007/05/malware_update_with_windows_up.html" target="_blank"><strong>http://www.symantec.com/enterprise/security_response/weblog/2007/05/malware_update_with_windows_up.html</strong></a></p>
+				  <p>17.10.2006</p>
+				  <p>IDAAPIHelp is a small IDAPython script, that saves time when searching for API Information while e.g. analyzing a malware with IDA Pro. It looks at cursor position for a valid api call and if found it tries to show you the eligible API Info from the provided helpfile.</p>
+				  <p><a href="http://www.reconstructer.org/code/IDAAPIHelp%20v0.3.zip" target="_blank">IDAAPIHelp v0.3.zip</a></p>
+				  <p>13.07.2006</p>
+				  <p>Superkill is a is small tool to kill processes, which are normally protected from being stopped on application level. After starting Superkill it detaches its driver from the RC_DATA resource area, installs it as service and runs the driver. Communication between applevel code and driver is being handled through the DeviceIoControl() function. Full source code included. </p>
+				  <p><a href="http://www.reconstructer.org/code/_Superkill-V1.0.zip" target="_blank">Superkill V1.0</a></p>
+				</div>
+				
+			</div>	
+
+		</div>
+		
+		<div class="clearfloat">&amp;nbps;</div>
+		
+	</div>
+
+
+
+
+</body></html>

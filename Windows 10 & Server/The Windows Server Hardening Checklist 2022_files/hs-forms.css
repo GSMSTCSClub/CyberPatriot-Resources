@@ -1,0 +1,227 @@
+.hs-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.hs-form-field label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.hs-input[type="text"],
+.hs-input[type="email"],
+.hs-input[type="tel"],
+select {
+    height: 48px;
+    margin-bottom: 0;
+    padding: 10px 16px;
+    border-color: #cccfe0;
+    border-radius: 6px;
+    -webkit-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #cccfe0;
+    width: 100%;
+    color: #4A5078;
+    background-color: white;
+}
+
+.hs-input[type="text"]:focus,
+.hs-input[type="email"]:focus,
+.hs-input[type="tel"]:focus {
+    outline: 0;
+    border-color: #1757c2;
+}
+
+.hs-input[type="text"]::placeholder,
+.hs-input[type="email"]::placeholder,
+.hs-input[type="tel"]::placeholder {
+    color: #A6ABC9;
+    opacity: 1;
+}
+
+.hs-input[type="text"]:-ms-input-placeholder,
+.hs-input[type="email"]:-ms-input-placeholder,
+.hs-input[type="tel"]:-ms-input-placeholder {
+    color: #A6ABC9;
+}
+
+.hs-input[type="text"]::-ms-input-placeholder,
+.hs-input[type="email"]::-ms-input-placeholder,
+.hs-input[type="tel"]::-ms-input-placeholder {
+    color: #A6ABC9;
+}
+
+.hs-input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    border-color: #cccfe0;
+    -webkit-transition: background-color .2s ease,border-color .2s ease;
+    transition: background-color .2s ease,border-color .2s ease;
+}
+
+.hs-form-booleancheckbox-display > span {
+    padding-left: 12px;
+    font-weight: 400;
+}
+
+.hs-form-booleancheckbox-display > span ~ span {
+    padding-left: 0;
+}
+
+.hs-error-msgs {
+    list-style: none;
+    color: #ef1700;
+    padding-left: 0;
+}
+
+.hs-error-msgs ul {
+    padding-left: 0;
+}
+
+.inputs-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.hs-button.primary {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 16px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1757c2;
+    background-color: #1757c2;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hs-button.primary:hover {
+    border-color: #5d89d4;
+    background-color: #5d89d4;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hs-richtext {
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+.form-newsletter .hs-form-required {
+    display: none;
+}
+
+.form-newsletter-email {
+    max-width: none;
+    margin-top: 16px;
+
+    display: flex;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.form-newsletter-email .hs-form-required {
+    display: none;
+}
+
+.form-newsletter-email .hs-form .hs-form-field label {
+    margin-bottom: 0;
+}
+
+.form-newsletter-email .hs_error_rollup {
+    display: none;
+}
+
+.form-newsletter-email .hs-form {
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 479px) {
+    .form-newsletter-email .hs-form {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+.hs-button.primary {
+    padding: 12px 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+@media screen and (max-width: 479px) {
+    .form-newsletter-email .hs-button.primary {
+        margin-left: 0;
+    }
+}
+
+.form-newsletter-email .hs-form .hs-submit {
+    height: 48px;
+    margin-left: 16px;
+}
+
+@media screen and (max-width: 479px) {
+    .form-newsletter-email .hs-form .hs-submit {
+        margin-left: 0;
+    }   
+}
+
+.form-newsletter-email-vertical .hs-form-required {
+    display: none;
+}
+
+.form-newsletter-email-vertical .hs_error_rollup {
+    display: none;
+}
+
+.demo-form .hs-submit {
+    margin-top: 36px;
+}
+
+.demo-form .hs_error_rollup {
+    display: none;
+}
+
+#jobs .w-dyn-item {
+    margin-bottom: 16px;
+}

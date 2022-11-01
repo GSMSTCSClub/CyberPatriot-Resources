@@ -1,0 +1,116 @@
+body
+{
+	background-color: #db2e32;
+	color: #4B4640;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	margin: 0px 2px;
+	padding: 0px 3px;
+	background-image: url(../images/background_code.gif);
+	background-repeat: repeat-y;
+	line-height: 16px;
+}
+
+/* content elements */
+
+#con
+{
+	height: 1000px;
+	width: 100;
+	text-align: left;
+	background-image: url(../images/background_container.gif);
+	background-repeat: repeat-y;
+}
+
+#head
+{
+	float: left;
+	height: 715px;
+	width: 193px;
+}
+
+#concont
+{
+	padding-top: 138px;
+	float: left;
+}
+
+#nav
+{
+	width: 755px;
+	background-image: url(../images/navigation_header.gif);
+	background-repeat: no-repeat;
+}
+
+.navbtn
+{
+	padding-left: 17px;
+}
+
+#context
+{
+	padding: 6px 10px 6px 64px;
+	background-image: url(../images/background_content.gif);
+	background-repeat: no-repeat;
+}
+
+#text
+{
+	width: 660px;
+	height: 370px;
+ 	overflow: auto;
+ 	
+}
+
+
+/* standard html elements */
+
+ul
+{
+	margin-top: 14px;
+}
+
+li
+{
+	margin-left: -14px;
+	list-style-type: square;
+}
+
+b
+{
+	color: #333333;
+}
+
+a
+{
+	color: #333333;
+}
+
+a:hover
+{
+	color: #000000;
+}
+
+/* content helpers */
+
+div.clearfloat
+{
+	float: none;
+	clear: both;
+	width: 1px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	height: 1px;
+}
+
+img
+{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+
