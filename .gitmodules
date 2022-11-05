@@ -10,3 +10,6 @@
 [submodule "scripts/linux/ansible-collection-hardening"]
 	path = scripts/linux/ansible-collection-hardening
 	url = https://github.com/dev-sec/ansible-collection-hardening
+[submodule "scripts/linux/JShielder"]
+	path = scripts/linux/JShielder
+	url = https://github.com/Jsitech/JShielder
