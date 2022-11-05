@@ -1,0 +1,298 @@
+\documentclass{article}
+\usepackage[figure, table, code, outputdir=build]{common}
+
+\title{Introduction to Ansible}
+\date{\today}
+\author{Yubo Cao \& Anish Goyal}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Ansible (\autoref{fig:ansible}) is currently the simplest and easy-to-use
+excellent software among operation and maintenance automation tools, which can
+be used to manage various resources. Users can use Ansible to automatically
+deploy applications for full deployment of their IT infrastructure.
+
+Ansible can:
+
+\begin{itemize}
+    \item Initialize and configure servers
+    \item \textbf{Run CyberPatriot tasks} \& \textbf{Automatically Security Hardening}
+    \item Performing software updates
+\end{itemize}
+
+Ansible, written in Python, is inferior in sense of performance to other tools,
+but it is very easy to use and has very good community support. Ansible is a
+very good tool for beginners to learn automation tools.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/ansible.png}
+    \caption{Ansible Icon}\label{fig:ansible}
+\end{figure}
+
+\section{Installation}
+
+Ansible can be installed on any Linux distribution (in fact, you can install it on
+Windows and Mac OS as well).
+
+We only care about installation on Ubuntu and Windows 10.
+
+\subsection{Ubuntu}
+
+\begin{minted}{bash}
+    sudo apt update
+    sudo apt install ansible -qq
+\end{minted}
+
+\subsection{Windows 10}
+
+\begin{minted}{bash}
+    choco install ansible
+\end{minted}
+
+Or, if you don't have Chocolatey installed, you can install it by running:
+
+\begin{minted}{bash}
+    pip install ansible
+\end{minted}
+
+If you don't even have Python or Pip installed, you can install them from
+\href{https://www.python.org/downloads/}{Python's official website}.
+
+\section{Terms}
+
+\begin{description}
+    \item[Control Node] The machine that runs Ansible. Those machines command the
+        managed nodes, e.g., your laptop.
+    \item[Managed Node] The machine that is managed by Ansible. Those machines are
+        controlled by the control node, e.g., server. However, the control node can
+        also be a managed node, i.e., self-managed.
+    \item[Inventory] A list of managed nodes.
+    \item[Playbook] A list of tasks to be executed on the managed nodes.
+    \item[Task] A single task to be executed on the managed nodes.
+    \item[Roles] A collection of tasks and modules to be executed on the managed
+        nodes.
+    \item[Module] A single module to be executed on the managed nodes. They are
+        like commands in the shell.
+\end{description}
+
+\section{Usage}
+
+\subsection{Configuration}
+
+The default config file is \mono!/etc/ansible/ansible.cfg!. However, the
+configuration files take precedence in the following order:
+
+\begin{enumerate}
+    \item \mono!ANSIBLE_CONFIG! (an environment variable)
+    \item \mono!ansible.cfg! (in the current directory)
+    \item \mono!~/ansible.cfg! (in the home directory)
+    \item \mono!/etc/ansible/ansible.cfg! (the default location)
+\end{enumerate}
+
+However, we will still use the default location for simplicity.
+
+\subsection{Inventory}
+
+Ansible uses an inventory file to specify the managed nodes. The default
+inventory file is \mono!/etc/ansible/hosts!.
+
+Considering the following inventory file:
+
+\begin{minted}{ini}
+[dev]
+192.168.0.1
+
+[school]
+192.168.0.2
+192.168.0.3
+
+[test]
+192.168.0.4
+
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local
+\end{minted}
+
+In that situation, the control nodes are grouped into 4 groups: \mono!dev!,
+\mono!school!, \mono!test!, and \mono!local!. The \mono!local! group is a
+special group that contains the control node itself. This way, we can run
+commands on the control node itself.
+
+Use \mono!ansible-inventory! to view the inventory file. For example, the above
+inventory file can be viewed as:
+
+\begin{minted}{bash}
+    ansible-inventory --graph
+\end{minted}
+
+\begin{minted}{bash}
+root@yubo-virtual-machine:/etc/ansible# ansible-inventory --graph
+@all:
+  |--@dev:
+  |  |--192.168.0.1
+  |--@local:
+  |  |--localhost
+  |--@school:
+  |  |--192.168.0.2
+  |  |--192.168.0.3
+  |--@test:
+  |  |--192.168.0.4
+  |--@ungrouped:
+\end{minted}
+
+\subsubsection{SSH}
+
+Since for all remote connections Ansible uses SSH, you need to make sure that
+you can SSH into the managed nodes without a password. In order to do so, you
+need to generate a SSH key pair and add the public key to the
+\mono!authorized_keys! file on the managed nodes.
+
+\begin{minted}{bash}
+    ssh-keygen -t rsa
+    ssh-copy-id user@host
+\end{minted}
+
+Another way is to set all the host to use the same username and password, and
+then use the \mono!ansible_user! and \mono!ansible_password! variables in the
+inventory file.
+
+\begin{minted}{ini}
+…
+[all:vars]
+ansible_user=user
+ansible_password=password
+\end{minted}
+
+\subsection{Command}
+
+Ansible can be used to run commands on the managed nodes (and more importantly,
+modules). Use \mono!-m! to specify the module to be used.
+
+\begin{minted}{bash}
+    ansible all -m ping
+\end{minted}
+
+The above command will run the \mono!ping! module on all the managed nodes. Some
+output like the following will be shown:
+
+\begin{minted}{bash}
+localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+…
+\end{minted}
+
+Most of module takes the same arguments. For example, the \mono!package! module
+takes the \mono!name! argument to specify the package to be installed.
+
+\begin{minted}{bash}
+    ansible all -m package -a "name=git state=present"
+\end{minted}
+
+The above command install the \mono!git! package on all the managed nodes
+(if not present; \emph{indempotence}). The following output will be shown:
+
+\begin{minted}{bash}
+    yubo@yubo-virtual-machine:~$ ansible local -m package -a "name=git state=present"
+    localhost | SUCCESS => {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+        },
+        "cache_update_time": 1667624256,
+        "cache_updated": false,
+        "changed": false
+    }
+\end{minted}
+
+\subsection{Playbook}
+
+A playbook is a list of tasks to be executed on the managed nodes. It is
+written in YAML. The following is an example of a playbook:
+
+\begin{minted}{yaml}
+---
+- name: Install Softwares
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install git
+      package:
+        name: git
+        state: present
+\end{minted}
+
+The above playbook will install the \mono!git! package on all the managed nodes.
+Notice that the \mono!become! option is set to \mono!yes!. This means that the
+tasks will be executed with \mono!sudo! (or \mono!su! if the user is \mono!root!).
+
+In a playbook, there are 4 main sections:
+
+\begin{description}
+    \item[hosts] The hosts to run the playbook on.
+    \item[become] Whether to run the tasks with \mono!sudo!.
+    \item[vars] Variables to be used in the playbook.
+    \item[tasks] The tasks to be executed.
+    \item[handlers] The handlers to be executed, after the tasks.
+\end{description}
+
+To execute a playbook, use the \mono!ansible-playbook! command:
+
+\begin{minted}{bash}
+    ansible-playbook playbook.yml
+\end{minted}
+
+Since none of our virtual hosts is set up, the above command will fail. 
+
+\section{Ansible Roles}
+
+Ansible roles are a way to structure your Ansible projects. A role is a
+directory that contains a set of tasks, handlers, templates, files, variables,
+and other Ansible artifacts. Roles can be shared and reused. Roles can also be
+created with \mono!ansible-galaxy!.
+
+\subsection{List of Roles}
+
+\begin{minted}{bash}
+    ansible-galaxy list
+\end{minted}
+
+The above command will list all the roles installed on the control node.
+
+\subsection{Download Roles}
+
+Go to \url{https://galaxy.ansible.com/} to search for roles. For example, to
+install the \mono!dev-sec.os-hardening! role, use the following command:
+
+\begin{minted}{bash}
+    ansible-galaxy install dev-sec.os-hardening
+\end{minted}
+
+\subsection{Run Roles}
+
+Roles can be run in a playbook. For example, the following playbook will run the
+\mono!dev-sec.os-hardening! role:
+
+\begin{minted}{yaml}
+---
+- name: Harden the system
+  hosts: all
+  become: yes
+  roles:
+    - dev-sec.os-hardening
+\end{minted}
+
+\end{document}
