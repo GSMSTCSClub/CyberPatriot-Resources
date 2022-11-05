@@ -1,0 +1,3 @@
+[submodule "scripts/linux/CyberPatriot-Scripts"]
+	path = scripts/linux/CyberPatriot-Scripts
+	url = https://github.com/BiermanM/CyberPatriot-Scripts
