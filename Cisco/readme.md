@@ -113,7 +113,9 @@ as well as do some coding.
     Cisco theories and commands, and some practice questions & lab.
 ## What's next?
 
-
+- *Routing TCP/IP, Volume I: Foundation of IP* & *Routing TCP/IP, Volume II:
+  CCIE Professional Development* by Jeff Doyle. A 1000-page book that contains a
+  lot of theory and practice. It is a bit outdated but still useful.
 
 # Reference/Cheat Sheet
 
