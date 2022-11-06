@@ -13,3 +13,6 @@
 [submodule "scripts/linux/JShielder"]
 	path = scripts/linux/JShielder
 	url = https://github.com/Jsitech/JShielder
+[submodule "scripts/windows/EzScript"]
+	path = scripts/windows/EzScript
+	url = https://github.com/xFaraday/EzScript
