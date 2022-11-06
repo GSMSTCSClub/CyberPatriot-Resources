@@ -1,0 +1,41 @@
+---
+- name: Reload ufw
+  ansible.builtin.ufw:
+    state: reloaded
+
+- name: Restart ssh
+  ansible.builtin.service:
+    name: ssh
+    state: "{{ item }}"
+  loop:
+    - stopped
+    - started
+  when:
+    - not ansible_distribution|lower == 'archlinux'
+  listen: "Restart ssh"
+
+- name: Restart sshd
+  ansible.builtin.service:
+    name: sshd
+    state: "{{ item }}"
+  loop:
+    - stopped
+    - started
+  when:
+    - ansible_distribution|lower == 'archlinux'
+  listen: "Restart ssh"
+
+- name: Restart ntpd
+  ansible.builtin.service:
+    name: "{{ harden_linux_ntp }}"
+    state: restarted
+
+- name: Restart systemd-timesyncd
+  ansible.builtin.service:
+    name: systemd-timesyncd
+    state: restarted
+
+- name: Restart sshguard
+  ansible.builtin.service:
+    name: sshguard
+    state: restarted

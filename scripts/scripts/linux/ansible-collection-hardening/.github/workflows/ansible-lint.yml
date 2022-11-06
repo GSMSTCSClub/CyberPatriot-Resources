@@ -1,0 +1,24 @@
+---
+name: Ansible Lint  # feel free to pick your own name
+
+on:  # yamllint disable-line rule:truthy
+  # Run CI against all pushes (direct commits, also merged PRs), Pull Requests
+  push:
+    branches: [master]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [master]
+
+jobs:
+  ansible-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Important: This sets up your GITHUB_WORKSPACE environment variable
+      - uses: actions/checkout@v3
+
+      - name: Lint Ansible Playbook
+        # replace "master" with any valid ref
+        uses: ansible/ansible-lint-action@main
+        with:
+          path: "roles/"
