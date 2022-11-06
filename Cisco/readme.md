@@ -14,7 +14,7 @@ and firewalls.
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" aria-label="Logo of Cisco">
 </div>
 
-## Why is Study Cisco?
+## Why Study Cisco?
 
 Cisco is not a very important part of CyberPatriot, at least, for the first two
 rounds (30 points out of 330). However,  we must not consider the use of such
@@ -78,9 +78,10 @@ as well as do some coding.
     each layer?
 - Read the following books and/or follow those tutorials. PDFs are available
   in this repo as well.
-  - \[Crash Course of [Computer Science](https://www.youtube.com/watch?v=3QhU9jd03a0) has 28# and 29#
+  - [Crash Course of Computer Science](https://www.youtube.com/watch?v=3QhU9jd03a0) has 28# and 29#
     episodes.
-  - [Computer Networking: A Top-Down Approach](https://www.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
+  - [Computer Networking: A Top-Down
+    Approach](https://www.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
   - (Chinese Warning) [趣谈网络协议](https://book.douban.com/subject/35013753/)
 
 ### Learn Cisco
