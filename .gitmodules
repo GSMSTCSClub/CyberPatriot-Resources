@@ -1,18 +1,18 @@
 [submodule "scripts/linux/CyberPatriot-Scripts"]
 	path = scripts/linux/CyberPatriot-Scripts
-	url = https://github.com/BiermanM/CyberPatriot-Scripts
+	url = https://github.com/Yubo-Cao/CyberPatriot-Scripts
 [submodule "scripts/multi/CyberPatriotScripts"]
 	path = scripts/multi/CyberPatriotScripts
-	url = https://github.com/BaiqingL/CyberPatriotScripts
+	url = https://github.com/Yubo-Cao/CyberPatriotScripts
 [submodule "scripts/linux/ansible-role-harden-linux"]
 	path = scripts/linux/ansible-role-harden-linux
-	url = https://github.com/githubixx/ansible-role-harden-linux
+	url = https://github.com/Yubo-Cao/ansible-role-harden-linux
 [submodule "scripts/linux/ansible-collection-hardening"]
 	path = scripts/linux/ansible-collection-hardening
-	url = https://github.com/dev-sec/ansible-collection-hardening
+	url = https://github.com/Yubo-Cao/ansible-role-harden-linux
 [submodule "scripts/linux/JShielder"]
 	path = scripts/linux/JShielder
-	url = https://github.com/Jsitech/JShielder
+	url = https://github.com/Yubo-Cao/JShielder
 [submodule "scripts/windows/EzScript"]
 	path = scripts/windows/EzScript
-	url = https://github.com/xFaraday/EzScript
+	url = https://github.com/Yubo-Cao/EzScript
