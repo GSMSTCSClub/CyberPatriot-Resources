@@ -1,5 +1,4 @@
-Restore Win32 Calculator
-========================
+# Restore Win32 Calculator
 
 Server 2016 still has the old calculator installed as a package, but it is
 renamed to win32calc.exe. Do not replace calc.exe on Windows 10. Doing so will

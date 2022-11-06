@@ -8,12 +8,12 @@ All those scripts in this directory may run for Windows & Linux. Optionally, it 
 
 - Linux
   - Notice this script is manually replacing configuration files of
-  `sources.list`, `lightdm.conf`, `sshd_confg` and similar files. with their
-  reference file. Those files are 6 years old and result in a lot of errors.
+    `sources.list`, `lightdm.conf`, `sshd_confg` and similar files. with their
+    reference file. Those files are 6 years old and result in a lot of errors.
     - Package repo is broken
     - `sshd` complains about deprecated configuration
   - This script just calls common commands and asks you to determine if
-  anything went wrong.
+    anything went wrong.
   - It does not like `ufw`, it just calls `iptables` to set up firewall. There is
     a lot of hard-coded addresses and ports.
   - Installs all kinds of anti-virus software.

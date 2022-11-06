@@ -25,18 +25,17 @@ version of Ubuntu. The scripts are designed to be run as root.
    - You must unlock the user accounts with `usermod -U <username>` and `root`
      account immediately after execution, if you want to use the machine after
      you run that script.
-2. [Dev-Sec's Ansible Collection Hardening](https://github.com/dev-sec/ansible-collection-hardening)
+1. [Dev-Sec's Ansible Collection Hardening](https://github.com/dev-sec/ansible-collection-hardening)
    - This is a collection of Ansible roles that can be used to harden a Linux
      system. The roles are designed to be used with the
      [Ansible Collection Hardening](https://galaxy.ansible.com/devsec/hardening).
    - The collection seems to be broken. However, `os-harden` is the only role
      that is needed for CyberPatriot.
-  
-------
+
+______________________________________________________________________
 
 Not tested.
 
 3. [JShielder](https://github.com/Jsitech/JShielder)
    - Only works with Ubuntu 16.04, 18.04, and Centos 7.
    - A lot of stars and forks. CIS benchmark is compliant.
-
